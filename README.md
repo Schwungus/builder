@@ -7,8 +7,10 @@ You'll use it in a GitHub action like so:
 ```yml
 jobs:
   build:
+    name: Build stuff
+    runs-on: ubuntu-24.04
     # Actually run the build using this image:
-    runs-on: ghcr.io/Schwungus/builder
+    container: { image: ghcr.io/schwungus/builder }
     strategy:
       matrix:
         cfg:
